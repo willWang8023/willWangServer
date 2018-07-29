@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: willWangServer
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: wwypa
+Implementation-Vendor-Id: com.will.wang
+Build-Jdk: 1.8.0_101
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/willWangServer
+Created-By: Maven Integration for Eclipse
+
