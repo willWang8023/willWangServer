@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset= UTF-8"/>
+    <title>Title</title>
+</head>
+<body style="font-size: 30px">
+
+<h3><span th:text="${message}">购买商品：生活费</span></h3>
+<h3><span th:text="${price}">价格：0.01</span></h3>
+<h3><span th:text="${num}">数量：10个</span></h3>
+
+<button style="width: 100%; height: 60px; alignment: center; background: #b49e8f" onclick="commitOrder()">提交订单</button>
+
+<script src="../static/js/jquery-3.3.1.js"></script>
+<script>
+    function commitOrder() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/weChatPay/testWeChatPay",
+            data: null,
+            success: function(data) {
+                console.log(data);
+                var redirectUrl = "http://localhost:8080/weChatPay/weChatPayResult";
+                var mwebUrl = data.mweb_url+"&redirect_url="+encodeURIComponent(redirectUrl);
+                window.location.href=mwebUrl;
+            }
+
+        })
+    }
+</script>
+
+</body>
+</html>
